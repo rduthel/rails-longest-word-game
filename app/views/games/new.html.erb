@@ -1,0 +1,13 @@
+<h1>Random letters</h1>
+
+<% @letters.each do |letter| %>
+  <%= letter %>-
+<% end %>
+
+<%= form_tag(score_path, method: "post") do %>
+  <%= label_tag(:answer, "What's your best shot?") %>
+  <%= text_field_tag(:answer) %>
+  <%= submit_tag("Check") %>
+  <%= hidden_field_tag 'grid', @letters.join %>
+  <%= hidden_field_tag 'start_time', @start_time %>
+<% end %>
