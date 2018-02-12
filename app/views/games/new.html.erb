@@ -1,8 +1,10 @@
 <h1>Random letters</h1>
 
+<p>
 <% @letters.each do |letter| %>
   <%= letter %>-
 <% end %>
+</p>
 
 <%= form_tag(score_path, method: "post") do %>
   <%= label_tag(:answer, "What's your best shot?") %>
